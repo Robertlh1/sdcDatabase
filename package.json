@@ -1,0 +1,23 @@
+{
+  "name": "sdcdatabase",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postgres-start": "sudo su - postgres",
+    "postgres-init": "psql -d ubuntu -f -a ./db/schema.sql"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Robertlh1/sdcDatabase.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Robertlh1/sdcDatabase/issues"
+  },
+  "homepage": "https://github.com/Robertlh1/sdcDatabase#readme",
+  "dependencies": {
+    "pg": "^8.7.3"
+  }
+}
