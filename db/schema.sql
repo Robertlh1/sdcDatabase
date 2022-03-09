@@ -16,7 +16,7 @@ helpful INT
 CREATE INDEX questionsIndex ON questions (product_id)
 
 COPY questions(id, product_id, body, date_written, asker_name, asker_email, reported, helpful)
-FROM '/home/ubuntu/sdc/db/csv/questions.csv'
+FROM '/home/ubuntu/sdcDatabase/db/csv/questions.csv'
 DELIMITER ','
 HEADER CSV;
 
@@ -39,7 +39,7 @@ CONSTRAINT fk_question
 CREATE INDEX answersIndex ON answers (question_id)
 
 COPY answers(id, question_id, body, date_written, answerer_name, answerer_email, reported, helpful)
-FROM '/home/ubuntu/sdc/db/csv/answers.csv'
+FROM '/home/ubuntu/sdcDatabase/db/csv/answers.csv'
 DELIMITER ','
 HEADER CSV;
 
@@ -57,7 +57,7 @@ CONSTRAINT fk_answer
 CREATE INDEX photosIndex ON answers_photos (answer_id)
 
 COPY answers_photos(id, answer_id, url)
-FROM '/home/ubuntu/sdc/db/csv/answers_photos.csv'
+FROM '/home/ubuntu/sdcDatabase/db/csv/answers_photos.csv'
 DELIMITER ','
 HEADER CSV;
 
@@ -73,7 +73,7 @@ helpful INT,
 );
 
 COPY tempquestions(id, product_id, body, date_written, asker_name, asker_email, reported, helpful)
-FROM '/home/ubuntu/sdc/db/csv/questions.csv'
+FROM '/home/ubuntu/sdcDatabase/db/csv/questions.csv'
 DELIMITER ','
 HEADER CSV;
 
@@ -105,7 +105,7 @@ CONSTRAINT fk_question
 );
 
 COPY tempanswers(id, question_id, body, date_written, answerer_name, answerer_email, reported, helpful)
-FROM '/home/ubuntu/sdc/db/csv/answers.csv'
+FROM '/home/ubuntu/sdcDatabase/db/csv/answers.csv'
 DELIMITER ','
 HEADER CSV;
 
