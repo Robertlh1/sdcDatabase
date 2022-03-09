@@ -13,7 +13,7 @@ reported BOOLEAN,
 helpful INT
 );
 
-CREATE INDEX questionsIndex ON questions (product_id)
+CREATE INDEX questionsIndex ON questions (product_id);
 
 COPY questions(id, product_id, body, date_written, asker_name, asker_email, reported, helpful)
 FROM '/home/ubuntu/sdcDatabase/db/csv/questions.csv'
@@ -36,7 +36,7 @@ CONSTRAINT fk_question
     REFERENCES questions(id)
 );
 
-CREATE INDEX answersIndex ON answers (question_id)
+CREATE INDEX answersIndex ON answers (question_id);
 
 COPY answers(id, question_id, body, date_written, answerer_name, answerer_email, reported, helpful)
 FROM '/home/ubuntu/sdcDatabase/db/csv/answers.csv'
@@ -54,7 +54,7 @@ CONSTRAINT fk_answer
     REFERENCES answers(id)
 );
 
-CREATE INDEX photosIndex ON answers_photos (answer_id)
+CREATE INDEX photosIndex ON answers_photos (answer_id);
 
 COPY answers_photos(id, answer_id, url)
 FROM '/home/ubuntu/sdcDatabase/db/csv/answers_photos.csv'
